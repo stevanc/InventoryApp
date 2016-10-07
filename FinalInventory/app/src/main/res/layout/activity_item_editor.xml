@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Layout for the editor -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    tools:context=".ItemEditor">
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="@string/item_editor_overview" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <!-- Name field -->
+            <EditText
+                android:id="@+id/edit_item_name"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/item_editor_product"
+                android:inputType="textCapWords" />
+
+            <!-- Price field -->
+            <EditText
+                android:id="@+id/edit_item_price"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/item_editor_price"
+                android:inputType="numberDecimal" />
+
+            <!-- Quantity field -->
+            <EditText
+                android:id="@+id/edit_item_quantity_edit_text"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/item_editor_quantity"
+                android:inputType="number" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/item_edit_manage_header"
+            style="@style/CategoryStyle"
+            android:text="@string/item_editor_manage_heading" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="16dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="16dp">
+
+                <Button
+                    android:id="@+id/edit_item_sell_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="@color/colorSellButton"
+                    android:text="@string/sell"
+                    android:textColor="#FFFFFF" />
+
+                <EditText
+                    android:id="@+id/edit_item_quantity_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/edit_item_sell_button"
+                    android:hint="@string/item_editor_edit_text_quantity"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/edit_item_receive_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@id/edit_item_quantity_update"
+                    android:background="@color/colorBuyButon"
+                    android:text="@string/edit_item_receive_button"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/edit_item_order_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/edit_item_sell_button"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorAccent"
+                    android:text="@string/order"
+                    android:textColor="#FFFFFF" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/item_edit_image_header"
+                style="@style/CategoryStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_editor_image_heading" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="8dp">
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/edit_item_image_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_add_a_photo_black_36dp" />
+    </RelativeLayout>
+</LinearLayout>
